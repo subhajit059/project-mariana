@@ -245,7 +245,7 @@ fun MarketplaceScreen(
                 item {
                     Spacer(modifier = Modifier.height(20.dp))
                     Text(
-                        text = "Your move, Subhajit!",
+                        text = "Welcome to Mariana",
                         fontSize = 26.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.White,
@@ -358,12 +358,12 @@ fun MarketplaceScreen(
                                             modifier = Modifier
                                                 .clip(RoundedCornerShape(14.dp))
                                                 .background(
-                                                    if (isSelected) Color(0xFF2563EB).copy(alpha = 0.22f) 
-                                                    else Color(0xFF0A1323).copy(alpha = 0.5f)
+                                                    if (isSelected) StrangeBlue.copy(alpha = 0.22f) 
+                                                    else DeepAbyssShadow.copy(alpha = 0.5f)
                                                 )
                                                 .border(
                                                     1.dp,
-                                                    if (isSelected) Color(0xFF3B82F6) 
+                                                    if (isSelected) StrangeCyan 
                                                     else getMarketplaceThemeColor(keyword).copy(alpha = 0.35f),
                                                     RoundedCornerShape(14.dp)
                                                 )
@@ -411,12 +411,12 @@ fun MarketplaceScreen(
                         Box(
                             modifier = Modifier
                                 .size(6.dp)
-                                .background(Color(0xFF2563EB), CircleShape)
+                                .background(StrangeCyan, CircleShape)
                         )
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
                             text = "ACTIVE DESTINATIONS",
-                            color = Color(0xFF64748B),
+                            color = IceCyan.copy(alpha = 0.6f),
                             fontSize = 11.sp,
                             fontWeight = FontWeight.Bold,
                             letterSpacing = 1.5.sp
@@ -424,7 +424,7 @@ fun MarketplaceScreen(
                         Spacer(modifier = Modifier.weight(1f))
                         Text(
                             text = "${filteredMarketplaces.size} Verified",
-                            color = Color(0xFF475569),
+                            color = IceCyan.copy(alpha = 0.45f),
                             fontSize = 11.sp,
                             fontWeight = FontWeight.SemiBold
                         )
@@ -439,8 +439,8 @@ fun MarketplaceScreen(
                                 .fillMaxWidth()
                                 .padding(vertical = 12.dp)
                                 .testTag("empty_markets_card"),
-                            colors = CardDefaults.cardColors(containerColor = Color(0x331E293B)),
-                            border = BorderStroke(1.dp, Color(0xFF334155))
+                            colors = CardDefaults.cardColors(containerColor = RoyalNavy.copy(alpha = 0.4f)),
+                            border = BorderStroke(1.dp, MarianBlue.copy(alpha = 0.35f))
                         ) {
                             Column(
                                 modifier = Modifier
@@ -503,7 +503,7 @@ fun MarketplaceScreen(
                                 .background(
                                     Brush.linearGradient(
                                         colors = listOf(
-                                            Color(0xFF2563EB).copy(alpha = 0.12f),
+                                            MarianBlue.copy(alpha = 0.15f),
                                             Color.Transparent
                                         )
                                     ),
@@ -511,7 +511,7 @@ fun MarketplaceScreen(
                                 )
                                 .border(
                                     1.dp,
-                                    Color(0xFF3B82F6).copy(alpha = 0.25f),
+                                    MarianBlue.copy(alpha = 0.35f),
                                     shape = RoundedCornerShape(16.dp)
                                 )
                                 .padding(20.dp),
@@ -522,7 +522,7 @@ fun MarketplaceScreen(
                                     text = "Providing direct source cart links",
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color(0xFF93C5FD).copy(alpha = 0.8f),
+                                    color = IceCyan.copy(alpha = 0.8f),
                                     letterSpacing = 1.2.sp,
                                     textAlign = TextAlign.Center
                                 )
@@ -531,7 +531,7 @@ fun MarketplaceScreen(
                                     text = "OF SECONDARY WEBSITE DIRECT LINKS",
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color(0xFF60A5FA),
+                                    color = StrangeCyan,
                                     letterSpacing = 1.2.sp,
                                     textAlign = TextAlign.Center
                                 )
@@ -545,11 +545,11 @@ fun MarketplaceScreen(
                             horizontalArrangement = Arrangement.Center,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Box(modifier = Modifier.size(6.dp).background(Color(0xFF2563EB), CircleShape))
+                            Box(modifier = Modifier.size(6.dp).background(StrangeCyan, CircleShape))
                             Spacer(modifier = Modifier.width(6.dp))
-                            Box(modifier = Modifier.size(6.dp).background(Color(0xFF1E3A8A), CircleShape))
+                            Box(modifier = Modifier.size(6.dp).background(MarianBlueDark, CircleShape))
                             Spacer(modifier = Modifier.width(6.dp))
-                            Box(modifier = Modifier.size(6.dp).background(Color(0xFF1E3A8A), CircleShape))
+                            Box(modifier = Modifier.size(6.dp).background(MarianBlueDark, CircleShape))
                         }
                     }
                     Spacer(modifier = Modifier.height(16.dp))
@@ -569,8 +569,8 @@ fun MarketplaceScreen(
                         .padding(16.dp)
                         .testTag("bridge_router_dialog"),
                     shape = RoundedCornerShape(16.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFF0F172A)),
-                    border = BorderStroke(1.dp, Color(0xFF2563EB))
+                    colors = CardDefaults.cardColors(containerColor = RoyalNavy),
+                    border = BorderStroke(1.5.dp, MarianBlue)
                 ) {
                     Column(
                         modifier = Modifier
@@ -581,21 +581,21 @@ fun MarketplaceScreen(
                         Box(
                             modifier = Modifier
                                 .size(56.dp)
-                                .background(Color(0xFF2563EB).copy(alpha = 0.15f), CircleShape)
-                                .border(1.dp, Color(0xFF2563EB), CircleShape),
+                                .background(MarianBlue.copy(alpha = 0.15f), CircleShape)
+                                .border(1.dp, MarianBlue, CircleShape),
                             contentAlignment = Alignment.Center
                         ) {
                             CircularProgressIndicator(
                                 progress = { state.progress },
                                 modifier = Modifier.size(46.dp),
-                                color = Color(0xFF60A5FA),
+                                color = StrangeCyan,
                                 strokeWidth = 3.dp,
-                                trackColor = Color(0xFF1E293B)
+                                trackColor = StrangeBlueMidnight
                             )
                             Icon(
                                 imageVector = Icons.Filled.Lock,
                                 contentDescription = "Routing Security Lock",
-                                tint = Color(0xFF60A5FA),
+                                tint = StrangeCyan,
                                 modifier = Modifier.size(18.dp)
                             )
                         }
@@ -643,8 +643,8 @@ fun MarketplaceScreen(
                                 .fillMaxWidth()
                                 .height(4.dp)
                                 .clip(RoundedCornerShape(2.dp)),
-                            color = Color(0xFF3B82F6),
-                            trackColor = Color(0xFF1E293B)
+                            color = MarianBlue,
+                            trackColor = StrangeBlueMidnight
                         )
                         
                         Spacer(modifier = Modifier.height(12.dp))
@@ -680,8 +680,8 @@ fun MarketplaceScreen(
                         .padding(16.dp)
                         .testTag("gemini_chat_dialog"),
                     shape = RoundedCornerShape(16.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFF0F172A)),
-                    border = BorderStroke(1.dp, Color(0xFF3B82F6))
+                    colors = CardDefaults.cardColors(containerColor = RoyalNavy),
+                    border = BorderStroke(1.5.dp, MarianBlue)
                 ) {
                     Column(
                         modifier = Modifier
@@ -698,7 +698,7 @@ fun MarketplaceScreen(
                                 Box(
                                     modifier = Modifier
                                         .size(8.dp)
-                                        .background(Color(0xFF3B82F6), CircleShape)
+                                        .background(StrangeCyan, CircleShape)
                                 )
                                 Spacer(modifier = Modifier.width(8.dp))
                                 Text(
@@ -755,8 +755,8 @@ fun MarketplaceScreen(
                                                 modifier = Modifier
                                                     .fillMaxWidth()
                                                     .padding(vertical = 4.dp)
-                                                    .background(Color(0xFF1E293B), RoundedCornerShape(10.dp))
-                                                    .border(1.dp, Color(0xFF334155), RoundedCornerShape(10.dp))
+                                                    .background(StrangeBlueMidnight, RoundedCornerShape(10.dp))
+                                                    .border(1.dp, MarianBlue.copy(alpha = 0.4f), RoundedCornerShape(10.dp))
                                                     .clickable { viewModel.sendGeminiQuery(query) }
                                                     .padding(12.dp)
                                             ) {
@@ -777,7 +777,17 @@ fun MarketplaceScreen(
                                             modifier = Modifier
                                                 .fillMaxWidth(0.85f)
                                                 .background(
-                                                    color = if (msg.isUser) Color(0xFF1D4ED8) else Color(0xFF1E293B),
+                                                    color = if (msg.isUser) MarianBlueMedium else StrangeBlueMidnight,
+                                                    shape = RoundedCornerShape(
+                                                        topStart = 12.dp,
+                                                        topEnd = 12.dp,
+                                                        bottomStart = if (msg.isUser) 12.dp else 0.dp,
+                                                        bottomEnd = if (msg.isUser) 0.dp else 12.dp
+                                                    )
+                                                )
+                                                .border(
+                                                    width = 1.dp,
+                                                    color = if (msg.isUser) MarianBlue else MarianBlueDark,
                                                     shape = RoundedCornerShape(
                                                         topStart = 12.dp,
                                                         topEnd = 12.dp,
@@ -808,19 +818,19 @@ fun MarketplaceScreen(
                                     ) {
                                         Box(
                                             modifier = Modifier
-                                                .background(Color(0xFF1E293B), RoundedCornerShape(12.dp))
+                                                .background(StrangeBlueMidnight, RoundedCornerShape(12.dp))
                                                 .padding(horizontal = 16.dp, vertical = 12.dp)
                                         ) {
                                             Row(verticalAlignment = Alignment.CenterVertically) {
                                                 CircularProgressIndicator(
                                                     modifier = Modifier.size(14.dp),
-                                                    color = Color(0xFF60A5FA),
+                                                    color = StrangeCyan,
                                                     strokeWidth = 2.dp
                                                 )
                                                 Spacer(modifier = Modifier.width(10.dp))
                                                 Text(
                                                     text = "Gemini is analyzing...",
-                                                    color = Color(0xFF94A3B8),
+                                                    color = IceCyan.copy(alpha = 0.6f),
                                                     fontSize = 12.sp
                                                 )
                                             }
@@ -834,8 +844,8 @@ fun MarketplaceScreen(
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color(0xFF1E293B), RoundedCornerShape(24.dp))
-                                .border(1.dp, Color(0xFF334155), RoundedCornerShape(24.dp))
+                                .background(StrangeBlueMidnight, RoundedCornerShape(24.dp))
+                                .border(1.dp, MarianBlue.copy(alpha = 0.5f), RoundedCornerShape(24.dp))
                                 .padding(horizontal = 14.dp, vertical = 4.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
@@ -871,7 +881,7 @@ fun MarketplaceScreen(
                                 },
                                 modifier = Modifier.size(32.dp)
                             ) {
-                                Icon(Icons.Filled.Send, contentDescription = "Send", tint = Color(0xFF60A5FA), modifier = Modifier.size(16.dp))
+                                Icon(Icons.Filled.Send, contentDescription = "Send", tint = StrangeCyan, modifier = Modifier.size(16.dp))
                             }
                         }
 
@@ -908,8 +918,8 @@ fun MarketplaceScreen(
                         .padding(12.dp)
                         .testTag("developer_hub_dialog"),
                     shape = RoundedCornerShape(16.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFF0F172A)),
-                    border = BorderStroke(1.dp, Color(0xFF10B981))
+                    colors = CardDefaults.cardColors(containerColor = RoyalNavy),
+                    border = BorderStroke(1.5.dp, MarianBlue)
                 ) {
                     Column(
                         modifier = Modifier
@@ -926,7 +936,7 @@ fun MarketplaceScreen(
                                 Box(
                                     modifier = Modifier
                                         .size(10.dp)
-                                        .background(Color(0xFF10B981), CircleShape)
+                                        .background(StrangeCyan, CircleShape)
                                 )
                                 Spacer(modifier = Modifier.width(8.dp))
                                 Column {
@@ -938,7 +948,7 @@ fun MarketplaceScreen(
                                     )
                                     Text(
                                         text = "Setup and Configuration Generator",
-                                        color = Color(0xFF10B981),
+                                        color = StrangeCyan,
                                         fontSize = 10.sp,
                                         fontWeight = FontWeight.Bold
                                     )
@@ -954,8 +964,8 @@ fun MarketplaceScreen(
                         // Tab Selection (Material 3 style)
                         TabRow(
                             selectedTabIndex = activeDevTab,
-                            containerColor = Color(0xFF1E293B),
-                            contentColor = Color(0xFF10B981),
+                            containerColor = StrangeBlueMidnight,
+                            contentColor = StrangeCyan,
                             modifier = Modifier.clip(RoundedCornerShape(8.dp))
                         ) {
                             Tab(
@@ -1042,8 +1052,8 @@ fun MarketplaceScreen(
                                             modifier = Modifier
                                                 .fillMaxWidth()
                                                 .weight(1f)
-                                                .background(Color(0xFF020617), RoundedCornerShape(8.dp))
-                                                .border(1.dp, Color(0xFF1E293B), RoundedCornerShape(8.dp))
+                                                .background(DeepAbyssShadow, RoundedCornerShape(8.dp))
+                                                .border(1.dp, MarianBlueDark, RoundedCornerShape(8.dp))
                                                 .padding(12.dp)
                                         ) {
                                             LazyColumn(
@@ -1123,8 +1133,8 @@ fun MarketplaceScreen(
                                                     modifier = Modifier
                                                         .fillMaxWidth()
                                                         .height(160.dp)
-                                                        .background(Color(0xFF020617), RoundedCornerShape(8.dp))
-                                                        .border(1.dp, Color(0xFF1E293B), RoundedCornerShape(8.dp))
+                                                        .background(DeepAbyssShadow, RoundedCornerShape(8.dp))
+                                                        .border(1.dp, MarianBlueDark, RoundedCornerShape(8.dp))
                                                         .padding(10.dp)
                                                 ) {
                                                     LazyColumn(modifier = Modifier.fillMaxSize()) {
@@ -1275,12 +1285,12 @@ fun MarketplaceCardItem(
             .padding(vertical = 6.dp)
             .testTag("market_card_${market.id}"),
         colors = CardDefaults.cardColors(
-            containerColor = if (isResolving) Color(0xFF040A1A) else Color(0xFF121826).copy(alpha = 0.60f)
+            containerColor = if (isResolving) DeepAbyssShadow else RoyalNavy.copy(alpha = 0.55f)
         ),
         shape = RoundedCornerShape(24.dp),
         border = BorderStroke(
             width = if (isResolving) 1.5.dp else 1.dp,
-            color = if (isResolving) Color(0xFF3B82F6).copy(alpha = 0.85f) else accentColor.copy(alpha = 0.28f)
+            color = if (isResolving) StrangeCyan.copy(alpha = 0.85f) else accentColor.copy(alpha = 0.35f)
         )
     ) {
         Column(
@@ -1341,8 +1351,8 @@ fun MarketplaceCardItem(
                             .height(36.dp)
                             .width(88.dp)
                             .clip(RoundedCornerShape(20.dp))
-                            .background(Color(0xFF2563EB).copy(alpha = 0.15f))
-                            .border(1.dp, Color(0xFF60A5FA).copy(alpha = 0.5f), RoundedCornerShape(20.dp))
+                            .background(MarianBlue.copy(alpha = 0.15f))
+                            .border(1.dp, StrangeCyan.copy(alpha = 0.5f), RoundedCornerShape(20.dp))
                             .padding(horizontal = 8.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -1350,12 +1360,12 @@ fun MarketplaceCardItem(
                             Box(
                                 modifier = Modifier
                                     .size(6.dp)
-                                    .background(Color(0xFF60A5FA), CircleShape)
+                                    .background(StrangeCyan, CircleShape)
                             )
                             Spacer(modifier = Modifier.width(6.dp))
                             Text(
                                 text = "Routing..",
-                                color = Color(0xFF60A5FA),
+                                color = StrangeCyan,
                                 fontSize = 10.sp,
                                 fontWeight = FontWeight.Bold
                             )
@@ -1803,11 +1813,11 @@ fun rememberShimmerBrush(
         )
         Brush.linearGradient(
             colors = listOf(
-                Color(0xFF040A17), // Solid deep navy base
-                Color(0xFF0A1E43), // Ambient dark blue shine
-                Color(0xFF2563EB).copy(alpha = 0.45f), // High contrast ice-blue glow
-                Color(0xFF0A1E43), // Ambient dark blue shine
-                Color(0xFF040A17)  // Solid deep navy base
+                DeepAbyssShadow,             // Solid deep navy base
+                MarianBlueDark,              // Ambient dark blue shine
+                StrangeCyan.copy(alpha = 0.45f), // High contrast ice-cyan glow
+                MarianBlueDark,              // Ambient dark blue shine
+                DeepAbyssShadow              // Solid deep navy base
             ),
             start = Offset(translateAnimation - 350f, translateAnimation - 350f),
             end = Offset(translateAnimation + 350f, translateAnimation + 350f)
