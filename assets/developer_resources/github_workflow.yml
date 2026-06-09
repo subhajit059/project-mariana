@@ -1,0 +1,38 @@
+# GitHub Actions Workflow: Automated Marketplace Link Checker Scraper
+# This workflow runs automatically once a day (and can be manually triggered on click)
+# It executes the Node.js scraper script, checks official sources, and updates Supabase.
+
+name: Marketplace Link Scraper
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every single day
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # Allows repository maintainers to run the scraper manually from the Actions tab
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code Repository
+      uses: actions/checkout@v4
+
+    - name: Install Node.js Environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install NPM Scraper Dependencies
+      run: |
+        npm install @supabase/supabase-js axios cheerio dotenv
+
+    - name: Execute Link Scraper Engine
+      env:
+        # Crucial API credentials stored securely in GitHub Secrets Manager
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      run: |
+        node assets/developer_resources/scraper.js

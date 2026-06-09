@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Market Bridge",
+  "description": "Secure centralized marketplace link aggregator with real-time bridge routing, Gemini assistance, and domain scraper tracking simulator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
